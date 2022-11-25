@@ -26,8 +26,8 @@
 #include <message_filters/sync_policies/approximate_time.h>
 
 // ORB-SLAM3-specific libraries. Directory is defined in CMakeLists.txt: ${ORB_SLAM3_DIR}
-#include "include/System.h"
-#include "include/ImuTypes.h"
+#include "orb_slam3/System.h"
+#include "orb_slam3/ImuTypes.h"
 
 extern ORB_SLAM3::System::eSensor sensor_type;
 extern std::string world_frame_id, cam_frame_id, imu_frame_id;

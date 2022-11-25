@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
     <name>orb_slam3_ros_wrapper</name>
     <version>0.0.1</version>
     <description>ROS wrapper for ORB SLAM3.</description>
@@ -17,14 +17,15 @@
     <build_depend>tf</build_depend>
     <build_depend>sensor_msgs</build_depend>
     <build_depend>message_generation</build_depend>
-    <run_depend>roscpp</run_depend>
-    <run_depend>rospy</run_depend>
-    <run_depend>std_msgs</run_depend>
-    <run_depend>cv_bridge</run_depend>
-    <run_depend>image_transport</run_depend>
-    <run_depend>tf</run_depend>
-    <run_depend>sensor_msgs</run_depend>
-    <run_depend>message_runtime</run_depend>
+    <depend>orb_slam3_core</depend>
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>rospy</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+    <exec_depend>cv_bridge</exec_depend>
+    <exec_depend>image_transport</exec_depend>
+    <exec_depend>tf</exec_depend>
+    <exec_depend>sensor_msgs</exec_depend>
+    <exec_depend>message_runtime</exec_depend>
     <export>
 
     </export>
