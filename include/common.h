@@ -26,15 +26,16 @@
 #include <message_filters/sync_policies/approximate_time.h>
 
 // ORB-SLAM3-specific libraries. Directory is defined in CMakeLists.txt: ${ORB_SLAM3_DIR}
-#include "include/System.h"
-#include "include/ImuTypes.h"
+#include "MORB_SLAM/System.h"
+#include "MORB_SLAM/ImuTypes.h"
+#include "MORB_SLAM/ImprovedTypes.hpp"
 
-extern ORB_SLAM3::System::eSensor sensor_type;
+extern ORB_SLAM3::CameraType::eSensor sensor_type;
 extern std::string world_frame_id, cam_frame_id, imu_frame_id;
 
 extern ros::Publisher pose_pub, map_points_pub;
 
-void setup_ros_publishers(ros::NodeHandle&, image_transport::ImageTransport&, ORB_SLAM3::System::eSensor);
+void setup_ros_publishers(ros::NodeHandle&, image_transport::ImageTransport&, ORB_SLAM3::CameraType::eSensor);
 
 void publish_ros_camera_pose(Sophus::SE3f, ros::Time);
 void publish_ros_tracked_mappoints(std::vector<ORB_SLAM3::MapPoint*>, ros::Time);

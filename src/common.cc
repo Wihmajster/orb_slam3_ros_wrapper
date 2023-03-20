@@ -6,12 +6,12 @@
 
 #include "common.h"
 
-ORB_SLAM3::System::eSensor sensor_type;
+ORB_SLAM3::CameraType::eSensor sensor_type;
 std::string world_frame_id, cam_frame_id, imu_frame_id;
 
 ros::Publisher pose_pub, map_points_pub;
 
-void setup_ros_publishers(ros::NodeHandle &node_handler, image_transport::ImageTransport &image_transport, ORB_SLAM3::System::eSensor sensor_type)
+void setup_ros_publishers(ros::NodeHandle &node_handler, image_transport::ImageTransport &image_transport, ORB_SLAM3::CameraType::eSensor sensor_type)
 {
     pose_pub = node_handler.advertise<geometry_msgs::PoseStamped>("orb_slam3/camera_pose", 1);
 

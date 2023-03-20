@@ -50,8 +50,8 @@ int main(int argc, char **argv)
     node_handler.param<bool>(node_name + "/enable_pangolin", enable_pangolin, true);
     
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
-    sensor_type = ORB_SLAM3::System::STEREO;
-    ORB_SLAM3::System SLAM(voc_file, settings_file, sensor_type, enable_pangolin);
+    sensor_type = ORB_SLAM3::CameraType::STEREO;
+    ORB_SLAM3::System SLAM(voc_file, settings_file, sensor_type);
     ImageGrabber igb(&SLAM);
 
     message_filters::Subscriber<sensor_msgs::Image> left_sub(node_handler, "/camera/left/image_raw", 1);
@@ -62,11 +62,7 @@ int main(int argc, char **argv)
 
     setup_ros_publishers(node_handler, image_transport, sensor_type);
 
-    ros::spin();
-
-    // Stop all threads
-    SLAM.Shutdown();
-    ros::shutdown();
+    ros::spin(); 
 
     return 0;
 }
